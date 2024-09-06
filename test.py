@@ -5,7 +5,6 @@ print("Current Working Directory:", os.getcwd())
 
 import csv
 import spacy
-import pandas as pd
 import warnings
 
 warnings.filterwarnings("ignore", category=FutureWarning)
