@@ -21,7 +21,7 @@ text = "blair prepares to name poll date tony blair is likely to name 5 may as e
 doc = nlp(text)
 
 # Remove stop words
-filtered_tokens = [token.text for token in doc if not token.is_stop and token.text.strip()]
+filtered_tokens = [token.text for token in doc if not token.is_stop and not token.is_punct and len(token.text.strip()) > 1 ]
 
 # Print the text excluding stop words
 print(filtered_tokens)
