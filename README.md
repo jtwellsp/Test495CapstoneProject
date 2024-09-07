@@ -17,3 +17,6 @@ As well as the use of Pandas:
 ```
 pip install pandas
 ```
+
+### Last Updated
+This README was updated on 9/7/24
