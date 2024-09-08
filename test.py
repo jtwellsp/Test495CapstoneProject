@@ -26,9 +26,13 @@ with open(input_file, 'r', newline='', encoding='utf-8') as infile, \
     reader = csv.reader(infile)
     writer = csv.writer(outfile)
 
+    header = next(reader)  # Skip the header row if present
+    writer.writerow(header)  # Write the header row into the output file (optional)
+
     # Iterate through each row in the CSV
     for row in reader:
         # Assume the text to tokenize is in the correct column
+        category = row[0]
         text = row[1]
 
         # Preprocess the text
@@ -46,6 +50,7 @@ with open(input_file, 'r', newline='', encoding='utf-8') as infile, \
 
         # Write non-empty filtered tokens to the new CSV file
         if filtered_tokens:
-            writer.writerow(filtered_tokens)
+            writer.writerow([category] + filtered_tokens)
 
 print(f"Processed data has been written to {output_file}")
+
